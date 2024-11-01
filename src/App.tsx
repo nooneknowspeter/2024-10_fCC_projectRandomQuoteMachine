@@ -4,6 +4,9 @@ import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 function App() {
   return (
     <>
+      <div className="container-fluid bg-primary position-absolute top-0 bottom-0 start-0 end-0">
+        ff
+      </div>
       <div
         className="container text-secondary position-absolute top-50 start-50 translate-middle text-wrap mx-auto p-2"
         style={{ maxWidth: 800, minWidth: 250 }}
