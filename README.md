@@ -23,3 +23,7 @@
 - [vite](https://vite.dev/)
 - [vsCode](https://code.visualstudio.com/)
 - [wsl_ubuntu](https://learn.microsoft.com/en-us/windows/wsl/)
+
+## UI / UX Prototype
+
+![UI / UX Prototype!](./uiPrototype.gif "UI / UX Prototype")
