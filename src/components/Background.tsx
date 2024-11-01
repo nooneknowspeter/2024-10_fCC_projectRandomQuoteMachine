@@ -1,4 +1,3 @@
-import React from "react";
 import "/src/sass/main.css";
 import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
