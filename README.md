@@ -8,21 +8,21 @@
 
 ## TechStack / Software
 
-- [bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
-- [gsap](https://gsap.com/docs/v3)
-- [git](https://git-scm.com/)
-- [gitHub](https://github.com/)
-- [figma](https://www.figma.com/)
-- [react](https://react.dev/)
-- [reactThreeFiber](https://r3f.docs.pmnd.rs/getting-started/introduction)
-- [netlify](https://www.netlify.com/)
-- [nodejs](https://nodejs.org/en/)
+- [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Gsap](https://gsap.com/docs/v3)
+- [Git](https://git-scm.com/)
+- [GitHub](https://github.com/)
+- [Figma](https://www.figma.com/)
+- [React](https://react.dev/)
+- [ReactThreeFiber](https://r3f.docs.pmnd.rs/getting-started/introduction)
+- [Netlify](https://www.netlify.com/)
+- [Nodejs](https://nodejs.org/en/)
 - [nvm](https://github.com/nvm-sh/nvm)
 - [npm](https://www.npmjs.com/)
-- [threejs](https://threejs.org/)
-- [vite](https://vite.dev/)
-- [vsCode](https://code.visualstudio.com/)
-- [wsl_ubuntu](https://learn.microsoft.com/en-us/windows/wsl/)
+- [Threejs](https://threejs.org/)
+- [Vite](https://vite.dev/)
+- [Visual Studio code](https://code.visualstudio.com/)
+- [WSL_Ubuntu](https://learn.microsoft.com/en-us/windows/wsl/)
 
 ## UI / UX Prototype
 
