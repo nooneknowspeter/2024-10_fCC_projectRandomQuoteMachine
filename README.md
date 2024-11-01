@@ -26,4 +26,4 @@
 
 ## UI / UX Prototype
 
-<img src="https://github.com/nooneknowspeter/2024-10_fCC_projectRandomQuoteMachine/blob/master/public/uiPrototype.gif" alt="UI / UX Prototype" />
+![UI / UX Prototype!](https://github.com/nooneknowspeter/2024-10_fCC_projectRandomQuoteMachine/blob/master/public/uiPrototype.gif)
