@@ -6,8 +6,15 @@ import QuoteAssembly from "./components/QuoteAssembly";
 import ShareButton from "./components/ShareButton";
 
 function App() {
-  const changeQuote = () => {
-    alert("hello world");
+  // API link https://github.com/JamesFT/Database-Quotes-JSON/blob/master/quotes.json
+
+  // delivering data
+  // const changeQuote = (data: { data: string }) => {
+  //   // const { quoteText, quoteAuthor } = data;
+  // };
+
+  const fetchQuote = () => {
+    console.log("working?");
   };
   return (
     <>
@@ -17,10 +24,10 @@ function App() {
         style={{ maxWidth: 800, minWidth: 250 }}
         id="quote-box"
       >
-        <QuoteAssembly />
+        <QuoteAssembly quoteText="f" quoteAuthor="f" />
         <div className="d-flex justify-content-between">
           <ShareButton />
-          <NewQuoteButton onClick={changeQuote} />
+          <NewQuoteButton onClick={fetchQuote} />
         </div>
       </div>
     </>

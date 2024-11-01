@@ -1,30 +1,27 @@
 import "/src/sass/main.css";
 import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
-const Quote = () => {
+const Quote = ({ quoteText }: { quoteText: string }) => {
   return (
     <p className="text-center text-wrap fw-semibold " id="text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
+      {quoteText}
     </p>
   );
 };
 
-const Author = () => {
+const Author = ({ quoteAuthor }: { quoteAuthor: string }) => {
   return (
     <p className="text-end fw-medium" id="author">
-      - author
+      - {quoteAuthor}
     </p>
   );
 };
 
-const QuoteAssembly = () => {
+const QuoteAssembly = (props: { quoteAuthor: string; quoteText: string }) => {
   return (
     <>
-      <Quote />
-      <Author />
+      <Quote quoteText={props.quoteText} />
+      <Author quoteAuthor={props.quoteAuthor} />
     </>
   );
 };
