@@ -1,3 +1,6 @@
+// firaCode import
+@import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+
 @import "/node_modules/bootstrap/scss/bootstrap";
 
 @import "/node_modules/bootstrap/scss/variables";
@@ -12,7 +15,7 @@ $light:         $gray-100;
 $dark:          $gray-900;
 
 // font change
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      'Fira Code', monospace, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
 @import "/node_modules/bootstrap/scss/_variables-dark.scss";
