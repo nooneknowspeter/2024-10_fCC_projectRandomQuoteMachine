@@ -1,3 +1,4 @@
+import React, { Component } from "react";
 import "/src/sass/main.css";
 import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 import Background from "./components/Background";
@@ -21,7 +22,7 @@ function App() {
         <QuoteAssembly />
         <div className="d-flex justify-content-between">
           <ShareButton />
-          <NewQuoteButton />
+          <NewQuoteButton buttonDisplayName="New Quote" />
         </div>
       </div>
     </>

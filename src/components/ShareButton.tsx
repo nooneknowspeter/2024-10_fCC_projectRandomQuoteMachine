@@ -8,7 +8,7 @@ const ShareButton = () => {
       className="btn btn-primary col-sm-1"
       id="tweet-quote"
       target="_blank"
-      href="twitter.com/intent/tweet"
+      href={`twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=f`}
     >
       <i className="bi bi-twitter-x"></i>
     </a>
