@@ -1,4 +1,3 @@
-import React, { Component } from "react";
 import "/src/sass/main.css";
 import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 import Background from "./components/Background";
@@ -7,10 +6,9 @@ import QuoteAssembly from "./components/QuoteAssembly";
 import ShareButton from "./components/ShareButton";
 
 function App() {
-  // const clickHandle = () => {
-  //   alert("hello world");
-  // };
-
+  const changeQuote = () => {
+    alert("hello world");
+  };
   return (
     <>
       <Background />
@@ -22,7 +20,7 @@ function App() {
         <QuoteAssembly />
         <div className="d-flex justify-content-between">
           <ShareButton />
-          <NewQuoteButton buttonDisplayName="New Quote" />
+          <NewQuoteButton onClick={changeQuote} />
         </div>
       </div>
     </>
