@@ -26,4 +26,4 @@
 
 ## UI / UX Prototype
 
-![UI / UX Prototype!](./uiPrototype.gif "UI / UX Prototype")
+![UI / UX Prototype!](https://imgur.com/a/YhR65GV.gif)
