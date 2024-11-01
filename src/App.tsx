@@ -6,6 +6,10 @@ import QuoteAssembly from "./components/QuoteAssembly";
 import ShareButton from "./components/ShareButton";
 
 function App() {
+  // const clickHandle = () => {
+  //   alert("hello world");
+  // };
+
   return (
     <>
       <Background />

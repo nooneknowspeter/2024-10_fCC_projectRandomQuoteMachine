@@ -20,6 +20,7 @@
 - [nvm](https://github.com/nvm-sh/nvm)
 - [npm](https://www.npmjs.com/)
 - [Threejs](https://threejs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vite.dev/)
 - [Visual Studio code](https://code.visualstudio.com/)
 - [WSL_Ubuntu](https://learn.microsoft.com/en-us/windows/wsl/)
