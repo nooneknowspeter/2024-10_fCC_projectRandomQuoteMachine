@@ -14,6 +14,9 @@ function App() {
 
   const [quotes, setQuotes] = useState<{ quote: string; author: string }[]>([]);
 
+  // how data looks from json
+  //   [{ quote: "quote", author: "author" },...]
+
   async function fetchData() {
     try {
       const res = await fetch(quotesjson);
@@ -27,9 +30,6 @@ function App() {
   useEffect(() => {
     fetchData();
   }, []);
-
-  // how data looks from json
-  //   [{ quote: "quote", author: "author" },...]
 
   const changeQuote = () => {
     const randomIndex = Math.floor(Math.random() * quotes.length);
@@ -45,10 +45,7 @@ function App() {
         style={{ maxWidth: 800, minWidth: 250 }}
         id="quote-box"
       >
-        <QuoteAssembly
-          quoteText="{ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. }"
-          quoteAuthor="{ author }"
-        />
+        <QuoteAssembly quoteText={quotes[0].quote} quoteAuthor="f" />
         <div className="d-flex justify-content-between">
           <ShareButton />
           <NewQuoteButton onClick={changeQuote} />
