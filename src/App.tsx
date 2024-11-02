@@ -7,6 +7,7 @@ import QuoteAssembly from "./components/QuoteAssembly";
 import ShareButton from "./components/ShareButton";
 import GitHubRepoButton from "./components/GitHubRepoButton";
 import { gsap } from "gsap";
+import AnimatedCursor from "react-animated-cursor";
 
 function App() {
   // API links
@@ -126,6 +127,16 @@ function App() {
           <NewQuoteButton onClick={changeQuote} />
         </div>
         <GitHubRepoButton />
+      </div>
+      <div className="App">
+        <AnimatedCursor
+          color="255, 255, 255"
+          innerSize={4}
+          outerSize={8}
+          outerAlpha={0.2}
+          innerScale={0.7}
+          outerScale={5}
+        />
       </div>
     </>
   );
