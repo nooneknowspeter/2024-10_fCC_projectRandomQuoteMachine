@@ -21,6 +21,7 @@ function App() {
   const [initialText, setInitialText] = useState(true);
 
   const quoteRef = useRef<HTMLDivElement>(null);
+  const buttonsRef = useRef<HTMLDivElement>(null);
 
   // how data looks from json
   //   [{ quote: "quote", author: "author" },...]
@@ -30,16 +31,38 @@ function App() {
       const res = await fetch(quotesjson);
       const data = await res.json();
       setQuotes(data);
-      setTimeout(() => {
-        setInitialText(false); // Switch to quote text after initial display
-        setCurrentQuote(data[0]);
-      }, 2000); // Delay before switching to the first quote
+
+      // Fade in the initial text, wait, then fade out and display first quote
+      gsap.to(quoteRef.current, {
+        opacity: 1,
+        duration: 5,
+        onComplete: () => {
+          setTimeout(() => {
+            gsap.to(quoteRef.current, {
+              opacity: 0,
+              duration: 2,
+              onComplete: () => {
+                setInitialText(false);
+                setCurrentQuote(data[0]);
+                gsap.to(quoteRef.current, { opacity: 1, duration: 2 });
+                gsap.to(buttonsRef.current, {
+                  opacity: 1,
+                  duration: 1,
+                  delay: 1,
+                });
+              },
+            });
+          }, 2000); // Delay before fading out initial text
+        },
+      });
     } catch (error) {
       console.log(error);
     }
   }
 
   useEffect(() => {
+    gsap.set(quoteRef.current, { opacity: 0 });
+    gsap.set(buttonsRef.current, { opacity: 0 });
     fetchData();
   }, []);
 
@@ -70,19 +93,29 @@ function App() {
       >
         <div ref={quoteRef} style={{ opacity: 1 }}>
           {initialText ? (
-            <p className="text-center text-wrap fw-semibold " id="text">
-              Hello World
-            </p>
+            <div className="d-flex justify-content-center">
+              <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
           ) : currentQuote ? (
             <QuoteAssembly
               quoteText={currentQuote.quote}
               quoteAuthor={currentQuote.author}
             />
           ) : (
-            <p>Loading...</p>
+            <div className="d-flex justify-content-center">
+              <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
           )}
         </div>
-        <div className="d-flex justify-content-between">
+        <div
+          className="d-flex justify-content-between"
+          ref={buttonsRef}
+          style={{ opacity: 0 }}
+        >
           <ShareButton
             href={
               currentQuote
