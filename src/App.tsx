@@ -13,6 +13,10 @@ function App() {
     "https://gist.githubusercontent.com/natebass/b0a548425a73bdf8ea5c618149fe1fce/raw/f4231cd5961f026264bb6bb3a6c41671b044f1f4/quotes.json";
 
   const [quotes, setQuotes] = useState<{ quote: string; author: string }[]>([]);
+  const [currentQuote, setCurrentQuote] = useState<{
+    quote: string;
+    author: string;
+  } | null>(null);
 
   // how data looks from json
   //   [{ quote: "quote", author: "author" },...]
@@ -22,6 +26,7 @@ function App() {
       const res = await fetch(quotesjson);
       const data = await res.json();
       setQuotes(data);
+      setCurrentQuote(data[0]);
     } catch (error) {
       console.log(error);
     }
@@ -32,9 +37,10 @@ function App() {
   }, []);
 
   const changeQuote = () => {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    const randomQuote = quotes[randomIndex];
-    console.log(randomQuote);
+    if (quotes.length > 0) {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      setCurrentQuote(quotes[randomIndex]); // Set a new random quote
+    }
   };
 
   return (
@@ -45,7 +51,14 @@ function App() {
         style={{ maxWidth: 800, minWidth: 250 }}
         id="quote-box"
       >
-        <QuoteAssembly quoteText={quotes[0].quote} quoteAuthor="f" />
+        {currentQuote ? (
+          <QuoteAssembly
+            quoteText={currentQuote.quote}
+            quoteAuthor={currentQuote.author}
+          />
+        ) : (
+          <p>Loading...</p>
+        )}
         <div className="d-flex justify-content-between">
           <ShareButton />
           <NewQuoteButton onClick={changeQuote} />
