@@ -11,7 +11,7 @@ import gsap from "gsap/all";
 }
 
 const MouseOn = (event: object) => {
-  if (event.isTrusted) {
+  if (event) {
     // console.log(true);
     // gsap anim
     gsap.to("#new-quote", {
@@ -23,7 +23,7 @@ const MouseOn = (event: object) => {
 };
 
 const MouseOff = (event: object) => {
-  if (event.isTrusted) {
+  if (event) {
     // console.log(false);
 
     // gsap anim

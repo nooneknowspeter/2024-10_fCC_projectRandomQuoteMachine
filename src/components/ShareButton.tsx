@@ -3,7 +3,7 @@ import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 import gsap from "gsap/all";
 
 const MouseOn = (event: object) => {
-  if (event.isTrusted) {
+  if (event) {
     // console.log(true);
     // gsap anim
     gsap.to("#tweet-quote", {
@@ -15,7 +15,7 @@ const MouseOn = (event: object) => {
 };
 
 const MouseOff = (event: object) => {
-  if (event.isTrusted) {
+  if (event) {
     // console.log(false);
 
     // gsap anim
