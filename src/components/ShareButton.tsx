@@ -5,7 +5,7 @@ const ShareButton = () => {
   return (
     <a
       type="button"
-      className="btn btn-primary col-sm-1"
+      className="btn btn-primary col-sm-1 btn-sm"
       id="tweet-quote"
       target="_blank"
       href={`https://www.twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=`}

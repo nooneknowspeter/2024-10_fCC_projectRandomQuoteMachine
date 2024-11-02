@@ -1,22 +1,24 @@
+import { useEffect, useState } from "react";
 import "/src/sass/main.css";
 import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 import Background from "./components/Background";
 import NewQuoteButton from "./components/NewQuoteButton";
 import QuoteAssembly from "./components/QuoteAssembly";
 import ShareButton from "./components/ShareButton";
-import { useEffect } from "react";
 import GitHubRepoButton from "./components/GitHubRepoButton";
 
 function App() {
   // API links
   const quotesjson =
-    "https://gist.githubusercontent.com/nasrulhazim/54b659e43b1035215cd0ba1d4577ee80/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json";
+    "https://gist.githubusercontent.com/natebass/b0a548425a73bdf8ea5c618149fe1fce/raw/f4231cd5961f026264bb6bb3a6c41671b044f1f4/quotes.json";
+
+  const [quotes, setQuotes] = useState<{ quote: string; author: string }[]>([]);
 
   async function fetchData() {
     try {
       const res = await fetch(quotesjson);
-      const data = res.json();
-      dataDestructure(data);
+      const data = await res.json();
+      setQuotes(data);
     } catch (error) {
       console.log(error);
     }
@@ -24,14 +26,15 @@ function App() {
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
-  const dataDestructure = (data: object) => {
-    console.log(data);
-  };
+  // how data looks from json
+  //   [{ quote: "quote", author: "author" },...]
 
   const changeQuote = () => {
-    console.log(Math.round(Math.random() * 100));
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const randomQuote = quotes[randomIndex];
+    console.log(randomQuote);
   };
 
   return (
@@ -42,7 +45,10 @@ function App() {
         style={{ maxWidth: 800, minWidth: 250 }}
         id="quote-box"
       >
-        <QuoteAssembly quoteText="f" quoteAuthor="f" />
+        <QuoteAssembly
+          quoteText="{ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. }"
+          quoteAuthor="{ author }"
+        />
         <div className="d-flex justify-content-between">
           <ShareButton />
           <NewQuoteButton onClick={changeQuote} />
