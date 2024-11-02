@@ -3,13 +3,16 @@ import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useRef } from "react";
+import { Mesh } from "three";
 
 const Geo = () => {
-  const cubeRef = useRef();
+  const cubeRef = useRef<Mesh>(null);
 
   useFrame(({ clock }) => {
-    // Use a sine wave to animate the cube side to side
-    cubeRef.current.position.x = Math.sin(clock.getElapsedTime()) * 1; // Adjust multiplier for range
+    if (cubeRef.current) {
+      // Use a sine wave to animate the cube side to side
+      cubeRef.current.position.x = Math.sin(clock.getElapsedTime()) * 1; // Adjust multiplier for range
+    }
   });
 
   return (
