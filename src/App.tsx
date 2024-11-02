@@ -125,8 +125,8 @@ function App() {
             }
           />
           <NewQuoteButton onClick={changeQuote} />
+          <GitHubRepoButton />
         </div>
-        <GitHubRepoButton />
       </div>
       <div className="App">
         <AnimatedCursor
