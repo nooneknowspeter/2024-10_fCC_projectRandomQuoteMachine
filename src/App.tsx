@@ -5,6 +5,7 @@ import NewQuoteButton from "./components/NewQuoteButton";
 import QuoteAssembly from "./components/QuoteAssembly";
 import ShareButton from "./components/ShareButton";
 import { useEffect } from "react";
+import GitHubRepoButton from "./components/GitHubRepoButton";
 
 function App() {
   // API links
@@ -46,6 +47,7 @@ function App() {
           <ShareButton />
           <NewQuoteButton onClick={changeQuote} />
         </div>
+        <GitHubRepoButton />
       </div>
     </>
   );
