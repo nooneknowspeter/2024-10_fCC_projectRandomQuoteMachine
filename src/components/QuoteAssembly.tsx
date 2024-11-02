@@ -3,9 +3,13 @@ import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
 const Quote = ({ quoteText }: { quoteText: string }) => {
   return (
-    <p className="text-center text-wrap fw-semibold " id="text">
-      {quoteText}
-    </p>
+    <>
+      <i className="bi bi-quote position-relative top-0 start-0"></i>
+      <p className="text-center text-wrap fw-semibold " id="text">
+        {quoteText}
+      </p>
+      <i className="bi bi-quote position-relative bottom-0 start-100"></i>
+    </>
   );
 };
 
