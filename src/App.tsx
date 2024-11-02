@@ -4,18 +4,35 @@ import Background from "./components/Background";
 import NewQuoteButton from "./components/NewQuoteButton";
 import QuoteAssembly from "./components/QuoteAssembly";
 import ShareButton from "./components/ShareButton";
+import { useEffect } from "react";
 
 function App() {
-  // API link https://github.com/JamesFT/Database-Quotes-JSON/blob/master/quotes.json
+  // API links
+  const quotesjson =
+    "https://gist.githubusercontent.com/nasrulhazim/54b659e43b1035215cd0ba1d4577ee80/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json";
 
-  // delivering data
-  // const changeQuote = (data: { data: string }) => {
-  //   // const { quoteText, quoteAuthor } = data;
-  // };
+  async function fetchData() {
+    try {
+      const res = await fetch(quotesjson);
+      const data = res.json();
+      dataDestructure(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-  const fetchQuote = () => {
-    console.log("working?");
+  useEffect(() => {
+    fetchData();
+  });
+
+  const dataDestructure = (data: object) => {
+    console.log(data);
   };
+
+  const changeQuote = () => {
+    console.log(Math.round(Math.random() * 100));
+  };
+
   return (
     <>
       <Background />
@@ -27,7 +44,7 @@ function App() {
         <QuoteAssembly quoteText="f" quoteAuthor="f" />
         <div className="d-flex justify-content-between">
           <ShareButton />
-          <NewQuoteButton onClick={fetchQuote} />
+          <NewQuoteButton onClick={changeQuote} />
         </div>
       </div>
     </>

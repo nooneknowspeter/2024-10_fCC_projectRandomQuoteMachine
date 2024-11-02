@@ -4,7 +4,7 @@ import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 {
   /*
    syntax for defining primitive: {prop}: {prop:primitypeType}
-   primitives = [string, number, boolean, symbol, null, undefined]
+   primitives/types = [string, number, boolean, symbol, null, undefined, object]
    */
 }
 
