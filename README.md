@@ -14,6 +14,7 @@
 - [GitHub](https://github.com/)
 - [Figma](https://www.figma.com/)
 - [React](https://react.dev/)
+- [React Animated Cursor](https://www.npmjs.com/package/react-animated-cursor)
 - [ReactThreeFiber](https://r3f.docs.pmnd.rs/getting-started/introduction)
 - [Netlify](https://www.netlify.com/)
 - [Nodejs](https://nodejs.org/en/)
