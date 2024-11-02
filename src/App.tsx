@@ -35,16 +35,16 @@ function App() {
       // Fade in the initial text, wait, then fade out and display first quote
       gsap.to(quoteRef.current, {
         opacity: 1,
-        duration: 5,
+        duration: 2,
         onComplete: () => {
           setTimeout(() => {
             gsap.to(quoteRef.current, {
               opacity: 0,
-              duration: 2,
+              duration: 0.5,
               onComplete: () => {
                 setInitialText(false);
                 setCurrentQuote(data[0]);
-                gsap.to(quoteRef.current, { opacity: 1, duration: 2 });
+                gsap.to(quoteRef.current, { opacity: 1, duration: 1 });
                 gsap.to(buttonsRef.current, {
                   opacity: 1,
                   duration: 1,
