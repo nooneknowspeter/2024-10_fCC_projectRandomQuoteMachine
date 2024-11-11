@@ -20,6 +20,7 @@
 - [Nodejs](https://nodejs.org/en/)
 - [nvm](https://github.com/nvm-sh/nvm)
 - [npm](https://www.npmjs.com/)
+- [SASS](https://sass-lang.com/)
 - [Threejs](https://threejs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vite.dev/)
